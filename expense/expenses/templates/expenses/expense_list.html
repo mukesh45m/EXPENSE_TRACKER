@@ -45,6 +45,7 @@
                         <th>Date</th>
                         <th>Category</th>
                         <th>Action</th>
+                        {% comment %} <th>Description</th> {% endcomment %}
                     </tr>
                 </thead>
                 <tbody>
@@ -54,13 +55,14 @@
                         <td>${{ expense.amount }}</td>
                         <td>{{ expense.date }}</td>
                         <td>{{ expense.category }}</td>
-
+                        
                         <td>
                             <a href="{% url 'delete_expense' expense.id %}"
-                               class="btn btn-danger btn-sm">
-                                Delete
-                            </a>
-                        </td>
+                            class="btn btn-danger btn-sm">
+                            Delete
+                        </a>
+                        {% comment %} <td>{{ expense.description }}</td> {% endcomment %}
+                    </td>
                     </tr>
                     {% endfor %}
                 </tbody>
