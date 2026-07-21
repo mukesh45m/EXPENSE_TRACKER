@@ -15,8 +15,9 @@
         <div class="card-body">
 
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="mb-0">Expenses</h2>
+                <h2 class="mb-0">{{ user.username }}</h2>
                 <a href="{% url 'add_expense' %}" class="btn btn-primary">Add Expense</a>
+                <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
                 <form method="get" class="d-flex gap-2 mb-4">
     <input type="text"
            name="search"
