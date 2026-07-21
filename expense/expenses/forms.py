@@ -5,3 +5,6 @@ class ExpenseForm(forms.ModelForm):
     class Meta:
         model = Expense
         fields = ['name', 'amount', 'date', 'category']
+        widgets = {
+            "date": forms.DateInput(attrs={"type": "date"})
+        }

@@ -14,7 +14,12 @@ def add_category(request):
         form = CategoryForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("category_list")
+            return redirect("add_expense")
     else:
         form = CategoryForm()
     return render(request, "categories/add_category.html", {"form": form})
+
+def delete_category(request, category_id):
+    category = Category.objects.get(id=category_id)
+    category.delete()
+    return redirect("category_list")
